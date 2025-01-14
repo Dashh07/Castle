@@ -26,6 +26,7 @@ public class PlayerMovementTutorial : MonoBehaviour
     public KeyCode sprintKey = KeyCode.LeftShift;
     public KeyCode crouchKey = KeyCode.C;
 
+
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
@@ -124,6 +125,8 @@ public class PlayerMovementTutorial : MonoBehaviour
 
         }
         //start crouch
+
+
         if (Input.GetKeyDown(crouchKey))
         {
             animator.SetBool("isCrouching", true);
@@ -267,6 +270,8 @@ public class PlayerMovementTutorial : MonoBehaviour
     {
         readyToJump = true;
     }
+
+    
 
     void stepClimb()
     {
