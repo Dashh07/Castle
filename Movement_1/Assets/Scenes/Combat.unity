@@ -1933,6 +1933,10 @@ PrefabInstance:
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2782696980934362335, guid: c18f1de28d01cf94aa392545442e3111, type: 3}
+      propertyPath: crouchSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2782696980934362335, guid: c18f1de28d01cf94aa392545442e3111, type: 3}
       propertyPath: sprintSpeed
       value: 20
       objectReference: {fileID: 0}

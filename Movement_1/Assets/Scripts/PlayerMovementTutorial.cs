@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 
 public class PlayerMovementTutorial : MonoBehaviour
@@ -23,11 +24,18 @@ public class PlayerMovementTutorial : MonoBehaviour
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode sprintKey = KeyCode.LeftShift;
+    public KeyCode crouchKey = KeyCode.C;
 
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
     bool grounded;
+
+    [Header("Crouching")]
+    public float crouchSpeed;
+    public float crouchYScale;
+    private float startYScale;
+    bool isCrouching;
 
     public Transform orientation;
 
@@ -53,6 +61,7 @@ public class PlayerMovementTutorial : MonoBehaviour
     {
         walking,
         sprinting,
+        crouching,
         air,
     }
 
@@ -68,6 +77,7 @@ public class PlayerMovementTutorial : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
+        startYScale = transform.localScale.y;
     }
 
     private void Update()
@@ -113,17 +123,60 @@ public class PlayerMovementTutorial : MonoBehaviour
             
 
         }
-  
+        //start crouch
+        if (Input.GetKeyDown(crouchKey))
+        {
+            animator.SetBool("isCrouching", true);
+            isCrouching = true;
+
+            //transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
+            //rb.AddForce(Vector3.down * 5f,ForceMode.Impulse);
+        }
+        if (Input.GetKeyUp(crouchKey))
+        {
+
+            animator.SetBool("isCrouching", false);
+            isCrouching = false;
+            //transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+        }
+        if(isCrouching && moveDirection == Vector3.zero)
+        {
+            animator.SetFloat("crouchSpeed", 0f);
+        }
+        else
+        {
+            animator.SetFloat("crouchSpeed", 0.5f);
+
+        }
+
+
+
+
     }
 
 
     private void StateHandler()
     {
+
+        //Mode - Crouching
+        if (Input.GetKey(crouchKey))
+        {
+            state = MovementState.crouching;
+            moveSpeed = crouchSpeed;
+            
+            
+            
+        }
+       
+        
+        
+        
         //Mode - Sprinting
         if(grounded && Input.GetKey(sprintKey))
         {
             state = MovementState.sprinting;
             moveSpeed = sprintSpeed;
+            animator.SetBool("isSprinting", true);
         }
 
         //Mode- Walking
@@ -131,6 +184,7 @@ public class PlayerMovementTutorial : MonoBehaviour
         {
             state = MovementState.walking;
             moveSpeed = walkSpeed;
+            animator.SetBool("isSprinting", false);
         }
 
         //Mode - Jump
