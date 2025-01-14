@@ -145,6 +145,7 @@ public class PlayerMovementTutorial : MonoBehaviour
         if(isCrouching && moveDirection == Vector3.zero)
         {
             animator.SetFloat("crouchSpeed", 0f);
+           
         }
         else
         {
@@ -152,11 +153,7 @@ public class PlayerMovementTutorial : MonoBehaviour
 
         }
 
-
-
-
     }
-
 
     private void StateHandler()
     {
@@ -166,13 +163,10 @@ public class PlayerMovementTutorial : MonoBehaviour
         {
             state = MovementState.crouching;
             moveSpeed = crouchSpeed;
-            
-            
+
             
         }
-       
-        
-        
+
         
         //Mode - Sprinting
         if(grounded && Input.GetKey(sprintKey))
