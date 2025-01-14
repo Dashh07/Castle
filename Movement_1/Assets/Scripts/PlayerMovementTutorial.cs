@@ -10,17 +10,19 @@ public class PlayerMovementTutorial : MonoBehaviour
     public float moveSpeed;
     float myFloat;
     public float groundDrag;
+    public float walkSpeed;
+    public float sprintSpeed;
 
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
     bool readyToJump;
 
-    [HideInInspector] public float walkSpeed;
-    [HideInInspector] public float sprintSpeed;
+    
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode sprintKey = KeyCode.LeftShift;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -45,6 +47,14 @@ public class PlayerMovementTutorial : MonoBehaviour
     [SerializeField] public float stepHeight;
     [SerializeField] public float stepSmooth;
 
+    public MovementState state;
+
+    public enum MovementState
+    {
+        walking,
+        sprinting,
+        air,
+    }
 
     private void Awake()
     {
@@ -68,6 +78,8 @@ public class PlayerMovementTutorial : MonoBehaviour
         MyInput();
         
         SpeedControl();
+
+        StateHandler();
 
         // handle drag
         if (grounded)
@@ -103,6 +115,31 @@ public class PlayerMovementTutorial : MonoBehaviour
         }
   
     }
+
+
+    private void StateHandler()
+    {
+        //Mode - Sprinting
+        if(grounded && Input.GetKey(sprintKey))
+        {
+            state = MovementState.sprinting;
+            moveSpeed = sprintSpeed;
+        }
+
+        //Mode- Walking
+        else if (grounded)
+        {
+            state = MovementState.walking;
+            moveSpeed = walkSpeed;
+        }
+
+        //Mode - Jump
+        else
+        {
+            state = MovementState.air;
+        }
+    }
+
 
     private void MovePlayer()
     {

@@ -214,7 +214,6 @@ GameObject:
   - component: {fileID: 294903026}
   - component: {fileID: 294903025}
   - component: {fileID: 294903027}
-  - component: {fileID: 294903028}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -383,20 +382,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &294903028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294903021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nonRigidbodyVelocity: 0
-  attenuationObject: {fileID: 0}
 --- !u!1 &304358668
 GameObject:
   m_ObjectHideFlags: 3
@@ -1932,12 +1917,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2782696980934362335, guid: c18f1de28d01cf94aa392545442e3111, type: 3}
+      propertyPath: moveSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2782696980934362335, guid: c18f1de28d01cf94aa392545442e3111, type: 3}
+      propertyPath: walkSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2782696980934362335, guid: c18f1de28d01cf94aa392545442e3111, type: 3}
       propertyPath: stepHeight
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2782696980934362335, guid: c18f1de28d01cf94aa392545442e3111, type: 3}
       propertyPath: stepSmooth
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2782696980934362335, guid: c18f1de28d01cf94aa392545442e3111, type: 3}
+      propertyPath: sprintSpeed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2782696980934362335, guid: c18f1de28d01cf94aa392545442e3111, type: 3}
       propertyPath: stepRayLower
