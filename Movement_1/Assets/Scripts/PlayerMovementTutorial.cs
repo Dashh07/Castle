@@ -40,12 +40,16 @@ public class PlayerMovementTutorial : MonoBehaviour
 
     private AnimationControls controller;
 
-   
+    [SerializeField] public GameObject stepRayUpper;
+    [SerializeField] public GameObject stepRayLower;
+    [SerializeField] public float stepHeight;
+    [SerializeField] public float stepSmooth;
 
 
     private void Awake()
     {
         controller = gameObject.GetComponent<AnimationControls>();
+        stepRayUpper.transform.position = new Vector3(stepRayUpper.transform.position.x, stepHeight, stepRayUpper.transform.position.z);
     }
 
     private void Start()
@@ -79,6 +83,7 @@ public class PlayerMovementTutorial : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
+        stepClimb();
     }
 
     private void MyInput()
@@ -170,6 +175,39 @@ public class PlayerMovementTutorial : MonoBehaviour
         readyToJump = true;
     }
 
-    
+    void stepClimb()
+    {
+        RaycastHit hitLower;
+        if (Physics.Raycast(stepRayLower.transform.position, transform.TransformDirection(Vector3.forward), out hitLower, 0.1f))
+        {
+            RaycastHit hitUpper;
+            if (!Physics.Raycast(stepRayUpper.transform.position, transform.TransformDirection(Vector3.forward), out hitUpper, 0.2f))
+            {
+                rb.position -= new Vector3(0f, -stepSmooth * Time.deltaTime, 0f);
+            }
+        }
+
+        RaycastHit hitLower45;
+        if (Physics.Raycast(stepRayLower.transform.position, transform.TransformDirection(1.5f, 0, 1), out hitLower45, 0.1f))
+        {
+
+            RaycastHit hitUpper45;
+            if (!Physics.Raycast(stepRayUpper.transform.position, transform.TransformDirection(1.5f, 0, 1), out hitUpper45, 0.2f))
+            {
+                rb.position -= new Vector3(0f, -stepSmooth * Time.deltaTime, 0f);
+            }
+        }
+
+        RaycastHit hitLowerMinus45;
+        if (Physics.Raycast(stepRayLower.transform.position, transform.TransformDirection(-1.5f, 0, 1), out hitLowerMinus45, 0.1f))
+        {
+
+            RaycastHit hitUpperMinus45;
+            if (!Physics.Raycast(stepRayUpper.transform.position, transform.TransformDirection(-1.5f, 0, 1), out hitUpperMinus45, 0.2f))
+            {
+                rb.position -= new Vector3(0f, -stepSmooth * Time.deltaTime, 0f);
+            }
+        }
+    }
 
 }

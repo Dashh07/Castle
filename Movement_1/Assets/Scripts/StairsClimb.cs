@@ -7,8 +7,8 @@ public class StairsClimb : MonoBehaviour
     Rigidbody rigidBody;
     [SerializeField] public GameObject stepRayUpper;
     [SerializeField] public GameObject stepRayLower;
-    [SerializeField] float stepHeight = 0.3f;
-    [SerializeField] float stepSmooth = 2f;
+    [SerializeField] public float stepHeight;
+    [SerializeField] public float stepSmooth;
 
     private void Awake()
     {
