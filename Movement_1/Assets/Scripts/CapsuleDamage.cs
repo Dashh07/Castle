@@ -12,16 +12,19 @@ public class CapsuleDamage : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void OnTriggerEnter(Collider other)
+   private void OnTriggerEnter(Collider other)
     {
         Health health = other.gameObject.GetComponent<Health>();
         if (health != null && gameObject.CompareTag("Player"))
         {
             health.TakeDamage(30);
-            Debug.Log("Damage");
+          Debug.Log("Damage");
         }
         
     }
+
+  
+
 }
 
 
