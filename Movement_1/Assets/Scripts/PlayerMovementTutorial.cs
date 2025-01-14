@@ -191,6 +191,7 @@ public class PlayerMovementTutorial : MonoBehaviour
         else
         {
             state = MovementState.air;
+            
         }
     }
 
@@ -208,7 +209,7 @@ public class PlayerMovementTutorial : MonoBehaviour
         {
             readyToJump = true;
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-           
+            
 
         }
             
@@ -217,6 +218,7 @@ public class PlayerMovementTutorial : MonoBehaviour
         else if (!grounded)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+            
             
         }
            
