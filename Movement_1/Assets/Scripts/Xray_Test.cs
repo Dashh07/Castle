@@ -6,6 +6,7 @@ public class Xray_Test : MonoBehaviour
 {
 
     public GameObject capsule;
+    public GameObject image;
 
 
     // Start is called before the first frame update
@@ -22,11 +23,13 @@ public class Xray_Test : MonoBehaviour
         {
             int LayerIgnore = LayerMask.NameToLayer("Xray");
             capsule.layer = LayerIgnore;
+            image.SetActive(true);
         }
         else if (Input.GetKeyUp(KeyCode.X))
         {
             int LayerIgnore = LayerMask.NameToLayer("Default");
             capsule.layer = LayerIgnore;
+            image.SetActive(false);
         }
     }
 }
