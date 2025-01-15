@@ -11,6 +11,8 @@ public class EnemyController : MonoBehaviour
     Transform target;
     NavMeshAgent agent;
     BoxCollider boxCollider;
+    public LayerMask layer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,7 @@ public class EnemyController : MonoBehaviour
     {
         float distance = Vector3.Distance(target.position, transform.position);
 
-        if (distance <= lookRadius && !animator.GetCurrentAnimatorStateInfo(0).IsName("Mutant_Walk"))
+        if (distance <= lookRadius && !animator.GetCurrentAnimatorStateInfo(0).IsName("Mutant_Walk") && Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hitInfo, 20f, layer))
         {
             animator.SetBool("isWalking", true);
             agent.SetDestination(target.position);
