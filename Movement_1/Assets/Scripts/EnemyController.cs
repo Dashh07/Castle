@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour
     {
         float distance = Vector3.Distance(target.position, transform.position);
 
-        if (distance <= lookRadius && !animator.GetCurrentAnimatorStateInfo(0).IsName("Mutant_Walk") && Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hitInfo, 20f, layer))
+        if (distance <= lookRadius && !animator.GetCurrentAnimatorStateInfo(0).IsName("Mutant_Walk"))
         {
             animator.SetBool("isWalking", true);
             agent.SetDestination(target.position);
