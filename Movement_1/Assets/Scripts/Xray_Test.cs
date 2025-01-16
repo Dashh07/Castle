@@ -5,7 +5,7 @@ using UnityEngine;
 public class Xray_Test : MonoBehaviour
 {
 
-    public GameObject capsule;
+    public List<GameObject> capsule;
     public GameObject image;
     public KeyCode togglekey = KeyCode.X;
     bool isXrayActive = false;
@@ -34,14 +34,22 @@ public class Xray_Test : MonoBehaviour
 
         if(isXrayActive)
         {
-            int LayerIgnore = LayerMask.NameToLayer("Xray");
-            capsule.layer = LayerIgnore;
+            foreach(GameObject enemy in capsule)
+            {
+                int LayerIgnore = LayerMask.NameToLayer("Xray");
+                enemy.layer = LayerIgnore;
+                
+            }
             image.SetActive(true);
         }
         else
         {
-            int LayerIgnore = LayerMask.NameToLayer("Default");
-            capsule.layer = LayerIgnore;
+            foreach (GameObject enemy in capsule)
+            {
+                int LayerIgnore = LayerMask.NameToLayer("Default");
+                enemy.layer = LayerIgnore;
+                
+            }
             image.SetActive(false);
         }
     }
