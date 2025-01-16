@@ -87,18 +87,13 @@ public class PlayerMovementTutorial : MonoBehaviour
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
 
         MyInput();
-        
-        SpeedControl();
-
         StateHandler();
-
+        SpeedControl();
         // handle drag
         if (grounded)
         {
             rb.drag = groundDrag;
-            
         }
-           
         else
             rb.drag = 0;
     }

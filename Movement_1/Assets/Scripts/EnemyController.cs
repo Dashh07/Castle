@@ -11,9 +11,9 @@ public class EnemyController : MonoBehaviour
     Transform target;
     NavMeshAgent agent;
     BoxCollider boxCollider;
-    public LayerMask layer;
+   public LayerMask layer;
 
-    // Start is called before the first frame update
+     //Start is called before the first frame update
     void Start()
     {
         target = GameObject.Find("Player").transform;
@@ -23,25 +23,25 @@ public class EnemyController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        float distance = Vector3.Distance(target.position, transform.position);
+   void Update()
+   {
+       float distance = Vector3.Distance(target.position, transform.position);
 
         if (distance <= lookRadius && !animator.GetCurrentAnimatorStateInfo(0).IsName("Mutant_Walk"))
-        {
+       {
             animator.SetBool("isWalking", true);
-            agent.SetDestination(target.position);
+           agent.SetDestination(target.position);
 
 
         }
-        else if(distance >= lookRadius)
-        {
-            animator.SetBool("isWalking", false);
+       else if(distance >= lookRadius)
+       {
+           animator.SetBool("isWalking", false);
         }
        
-        if (distance <= attackRadius)
-        {
-            Attack();
+       if (distance <= attackRadius)
+       {
+           Attack();
             
         }
 
@@ -53,7 +53,7 @@ public class EnemyController : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRadius);
+       Gizmos.DrawWireSphere(transform.position, attackRadius);
 
     }
 
@@ -83,10 +83,10 @@ public class EnemyController : MonoBehaviour
         if(other.gameObject.CompareTag("Player") && pHealth != null)
         {
             pHealth.TakeDamage(30);
-        }
+       }
 
 
-    }
+   }
 }
 
 
