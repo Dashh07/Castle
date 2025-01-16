@@ -10339,6 +10339,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6048116431186557719, guid: 751ac6764929a8c45ae830c4cd77463f, type: 3}
+      propertyPath: waypoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6048116431186557719, guid: 751ac6764929a8c45ae830c4cd77463f, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}

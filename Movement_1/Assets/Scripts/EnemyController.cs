@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     NavMeshAgent agent;
     BoxCollider boxCollider;
     
+    
 
      //Start is called before the first frame update
     void Start()
