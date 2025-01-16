@@ -13,6 +13,13 @@ public class FloatingText : MonoBehaviour
 
     }
 
+    private void LateUpdate()
+    {
+        var cameraToLookAt = Camera.main;
+        transform.LookAt(cameraToLookAt.transform);
+        transform.rotation = Quaternion.LookRotation(cameraToLookAt.transform.forward);
+    }
+
 
 
 }
