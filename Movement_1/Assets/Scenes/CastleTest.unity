@@ -10176,6 +10176,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 751ac6764929a8c45ae830c4cd77463f, type: 3}
+--- !u!1 &1052185814 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4066041381330026654, guid: 751ac6764929a8c45ae830c4cd77463f, type: 3}
+  m_PrefabInstance: {fileID: 1052185813}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1058919489 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3192484376682335478, guid: c26eec452fae51e47a2dc12a86ef35f8, type: 3}
@@ -25522,7 +25527,7 @@ PrefabInstance:
     - target: {fileID: 6679657012264226753, guid: c18f1de28d01cf94aa392545442e3111, type: 3}
       propertyPath: capsule
       value: 
-      objectReference: {fileID: 1311850215}
+      objectReference: {fileID: 1052185814}
     - target: {fileID: 6679657012264226753, guid: c18f1de28d01cf94aa392545442e3111, type: 3}
       propertyPath: capsule.Array.data[0]
       value: 
