@@ -11,12 +11,13 @@ public class EnemyController : MonoBehaviour
     Transform target;
     NavMeshAgent agent;
     BoxCollider boxCollider;
-   public LayerMask layer;
+    
 
      //Start is called before the first frame update
     void Start()
     {
-        target = GameObject.Find("Player").transform;
+        //target = GameObject.Find("Player").transform;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         boxCollider = GetComponentInChildren<BoxCollider>();
@@ -29,7 +30,7 @@ public class EnemyController : MonoBehaviour
 
         if (distance <= lookRadius && !animator.GetCurrentAnimatorStateInfo(0).IsName("Mutant_Walk"))
        {
-            animator.SetBool("isWalking", true);
+           animator.SetBool("isWalking", true);
            agent.SetDestination(target.position);
 
 
