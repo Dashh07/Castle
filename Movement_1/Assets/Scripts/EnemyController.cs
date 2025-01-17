@@ -47,6 +47,7 @@ public class EnemyController : MonoBehaviour
             
         }
 
+
     }
 
 
@@ -65,6 +66,7 @@ public class EnemyController : MonoBehaviour
         {
             animator.SetTrigger("Attack");
             agent.SetDestination(transform.position);
+            
         }
 
     }
