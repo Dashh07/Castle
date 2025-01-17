@@ -8,7 +8,7 @@ public class Damage : MonoBehaviour
      public Animator animator;
      public GameObject slash;
      BoxCollider BoxCollider;
-
+    public Transform sword;
     private void Start()
     {
         BoxCollider = GetComponent<BoxCollider>();
@@ -20,7 +20,7 @@ public class Damage : MonoBehaviour
         if (gameObject.CompareTag("Sword") && health != null)
         {
             Debug.Log("Damage");
-            Instantiate(slash, transform.position, Quaternion.identity, transform);
+            Instantiate(slash, sword.position, Quaternion.identity);
             BoxCollider.enabled = true;
             animator.SetTrigger("isHurt");
             health.TakeDamage(30);
@@ -34,6 +34,6 @@ public class Damage : MonoBehaviour
 
 
     }
- 
+
 }
 

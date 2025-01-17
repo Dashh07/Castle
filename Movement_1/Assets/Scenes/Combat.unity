@@ -1059,6 +1059,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4066041381330026654, guid: 751ac6764929a8c45ae830c4cd77463f, type: 3}
   m_PrefabInstance: {fileID: 677170557169881564}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1288822006 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2106710275933404706, guid: c18f1de28d01cf94aa392545442e3111, type: 3}
+  m_PrefabInstance: {fileID: 8384387294927847333}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1315954291
 GameObject:
   m_ObjectHideFlags: 3
@@ -2512,7 +2517,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1630622596610784952, guid: c18f1de28d01cf94aa392545442e3111, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3571687291243358954, guid: c18f1de28d01cf94aa392545442e3111, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2554,6 +2559,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3859177454471571392, guid: c18f1de28d01cf94aa392545442e3111, type: 3}
+      propertyPath: sword
+      value: 
+      objectReference: {fileID: 1288822006}
     - target: {fileID: 3859177454471571392, guid: c18f1de28d01cf94aa392545442e3111, type: 3}
       propertyPath: animator
       value: 
