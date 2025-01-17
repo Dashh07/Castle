@@ -42,6 +42,7 @@ public class AnimationControls : MonoBehaviour
         Equip();
         Block();
         Kick();
+        HeavyAttack();
     }
 
 
@@ -127,13 +128,21 @@ public class AnimationControls : MonoBehaviour
             //Reset Timer
             timeSinceAttack = 0;
 
-          
 
         }
 
-
     }
 
+    private void HeavyAttack()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (!isEquipped)
+                return;
+
+            playerAnim.SetTrigger("Heavy_Attack");
+        }
+    }
     public void ResetAttack()
     {
         isAttacking = false;

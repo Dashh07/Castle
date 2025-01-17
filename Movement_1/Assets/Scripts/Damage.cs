@@ -7,7 +7,7 @@ public class Damage : MonoBehaviour
 {
      public Animator animator;
      public GameObject slash;
-    BoxCollider BoxCollider;
+     BoxCollider BoxCollider;
 
     private void Start()
     {
