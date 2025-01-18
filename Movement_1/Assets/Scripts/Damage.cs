@@ -30,12 +30,7 @@ public class Damage : MonoBehaviour
 
 
         }
-        if (health = null)
-        {
-            return;
-        }
-
-
+  
     }
 
 }
