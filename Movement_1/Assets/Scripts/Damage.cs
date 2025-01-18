@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
@@ -9,9 +10,11 @@ public class Damage : MonoBehaviour
      public GameObject slash;
      BoxCollider BoxCollider;
     public Transform sword;
+   
     private void Start()
     {
         BoxCollider = GetComponent<BoxCollider>();
+       
     }
 
     private void OnTriggerEnter(Collider other)

@@ -85,7 +85,9 @@ public class EnemyController : MonoBehaviour
         if(other.gameObject.CompareTag("Player") && pHealth != null)
         {
             pHealth.TakeDamage(30);
-       }
+        }
+       
+      
 
 
    }
