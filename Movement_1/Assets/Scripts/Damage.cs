@@ -9,7 +9,7 @@ public class Damage : MonoBehaviour
      public Animator animator;
      public GameObject slash;
      BoxCollider BoxCollider;
-    public Transform sword;
+     public Transform sword;
    
     private void Start()
     {
