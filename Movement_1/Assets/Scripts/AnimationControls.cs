@@ -31,6 +31,9 @@ public class AnimationControls : MonoBehaviour
     public Transform Sword;
     public GameObject slash;
 
+    //Heavy Attack parameters
+    public bool isheavyAttacking;
+
 
 
     // Update is called once per frame
@@ -42,6 +45,7 @@ public class AnimationControls : MonoBehaviour
         Equip();
         Block();
         Kick();
+        HeavyAttack();
     }
 
 
@@ -77,7 +81,7 @@ public class AnimationControls : MonoBehaviour
 
     private void Block()
     {
-        if (Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetKey(KeyCode.E))
         {
             playerAnim.SetBool("Block", true);
             isBlocking = true;
@@ -127,13 +131,22 @@ public class AnimationControls : MonoBehaviour
             //Reset Timer
             timeSinceAttack = 0;
 
-          
 
         }
 
-
     }
 
+    private void HeavyAttack()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if (!isEquipped)
+                return;
+
+            playerAnim.SetTrigger("Heavy_Attack");
+            isheavyAttacking = true;
+        }
+    }
     public void ResetAttack()
     {
         isAttacking = false;

@@ -19342,7 +19342,11 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
+<<<<<<< HEAD
     path: Sword
+=======
+    path: Shield
+>>>>>>> a7a0f080eb0407986ed645e961fbf5ffddabc9e1
     classID: 65
     script: {fileID: 0}
     flags: 0
@@ -19814,7 +19818,11 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
+<<<<<<< HEAD
       path: 1529145355
+=======
+      path: 423614430
+>>>>>>> a7a0f080eb0407986ed645e961fbf5ffddabc9e1
       attribute: 3305885265
       script: {fileID: 0}
       typeID: 65
@@ -39880,7 +39888,11 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
+<<<<<<< HEAD
     path: Sword
+=======
+    path: Shield
+>>>>>>> a7a0f080eb0407986ed645e961fbf5ffddabc9e1
     classID: 65
     script: {fileID: 0}
     flags: 0
